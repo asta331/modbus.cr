@@ -36,7 +36,7 @@ module Modbus
     end
 
     private def next_txn_id
-      @txn_id = (@txn_id + 1) & 0xFFFF
+      @txn_id = @txn_id + 1
     rescue OverflowError
       @txn_id = 0_u16
       next_txn_id
